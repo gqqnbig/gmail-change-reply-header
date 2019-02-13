@@ -1,6 +1,6 @@
 (()=>{
 let element = document.querySelector(".editable .gmail_quote .gmail_attr");
-let s=element.childNodes[0].textContent;
+let s=element.textContent;
 let authorPattern=/^.+(?=于\d\d\d\d)/
 let authorAndEmail= s.match(authorPattern)[0];
 let datePattern=/于(\d{4})年(\d{1,2})月(\d{1,2})日(周.+?) (上午|下午)(\d{1,2}):(\d{1,2})写道/;
@@ -18,5 +18,5 @@ let dateString = d.toLocaleString('en-US', {weekday:"short",year: 'numeric', mon
 let timeString= d.toLocaleString('en-US', {hour:'numeric', minute:'numeric' })
 
 let fullString = "On " + dateString + " at " + timeString +" "+ authorAndEmail + " wrote:";
-element.childNodes[0].textContent=fullString;
+element.textContent=fullString;
 })()
