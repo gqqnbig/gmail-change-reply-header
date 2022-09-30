@@ -6,7 +6,7 @@
 	{
 		let authorPattern = /[^>]+([^\s]+@[^\s]+)?\s*(?=于\d\d\d\d)/;
 		let authorAndEmail = content.match(authorPattern)[0];
-		let datePattern = /于(\d{4})年(\d{1,2})月(\d{1,2})日(周.+?) (上午|下午)(\d{1,2}):(\d{1,2})写道/;
+		let datePattern = /于(\d{4})年(\d{1,2})月(\d{1,2})日(周.+?) (上午|下午)?(\d{1,2}):(\d{1,2})写道/;
 		let m = content.match(datePattern);
 		let year = m[1];
 		let month = m[2];
